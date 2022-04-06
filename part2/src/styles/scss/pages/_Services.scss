@@ -1,0 +1,81 @@
+@use '../abstracts/' as a;
+
+@mixin insertImgToContent {
+  @for $i from 1 through 9 {
+    .content-#{$i} {
+      background-image: url('/src/assets/gear-' + $i + '.jpg');
+    }
+  }
+}
+
+#services-section {
+  display: grid;
+  grid-template-columns: repeat(5, 20vw);
+  z-index: -1;
+
+  overflow: hidden;
+
+  .service {
+    height: 20vw;
+    width: 20vw;
+    color: a.$color-light;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    padding: 1.5rem;
+
+    h4 {
+      font-size: 3vw;
+    }
+  }
+
+  .content {
+    background-color: a.$bg-filter;
+    background-blend-mode: multiply;
+    background-size: cover;
+    position: relative;
+
+    .learn-more {
+      position: absolute;
+      top: 17vw;
+      left: 20vw;
+      width: 20vw;
+      height: 3vw;
+      background-color: a.$color-secondary;
+      color: a.$color-black;
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+      z-index: -2;
+
+      p {
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 600;
+
+        border-bottom: 3px solid a.$color-black;
+      }
+    }
+
+    &:hover {
+      background-color: a.$bg-filter-dark;
+      cursor: pointer;
+      z-index: 0;
+      transition: 0.2s;
+
+      .learn-more {
+        left: 0vw;
+      }
+    }
+  }
+
+  @include insertImgToContent;
+
+  .header {
+    background-color: a.$bg-dark;
+  }
+}

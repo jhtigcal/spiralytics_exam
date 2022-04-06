@@ -1,0 +1,18 @@
+button,
+.btn {
+  font-size: 1.125rem;
+  color: #fff;
+
+  width: fit-content;
+  padding: 0.75rem 1.5rem;
+  background: transparent;
+
+  border-style: solid;
+  border-width: 3px;
+  border-color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}

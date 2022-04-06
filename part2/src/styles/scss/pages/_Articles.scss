@@ -1,0 +1,87 @@
+@use '../abstracts' as a;
+
+@mixin insertImgToArticle {
+  @for $i from 1 through 4 {
+    .article-#{$i} .img-place {
+      background-size: cover;
+      background-image: url('/src/assets/article' + $i + '.jpg');
+    }
+  }
+}
+
+#article-section {
+  background-color: a.$bg-light;
+
+  .container {
+    padding-top: 6.25rem;
+    padding-bottom: 6.25rem;
+
+    display: flex;
+  }
+
+  h1 {
+    width: 50%;
+    color: a.$color-dark;
+    padding-right: 2.5rem;
+    line-height: 1.25;
+  }
+
+  .article-list {
+    border-left: 1px solid a.$color-black;
+    width: 50%;
+    padding-left: 3rem;
+
+    @include insertImgToArticle;
+
+    .article {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      padding: 1rem;
+
+      &:hover {
+        background-color: #eee;
+        cursor: pointer;
+      }
+
+      .img-place {
+        height: 4rem;
+        width: 4rem;
+
+        border: 5px solid #aaa;
+      }
+
+      p {
+        width: calc(100% - 6.5rem);
+        line-height: 1.25;
+
+        span {
+          color: #777;
+          font-size: 0.75rem;
+        }
+      }
+    }
+
+    & > .article:not(:first-child) {
+      border-top: 1px solid #eee;
+      padding-top: 1rem;
+    }
+  }
+
+  button,
+  .btn {
+    border-color: a.$color-black;
+    color: a.$color-black;
+    border-width: 1px;
+    margin-top: 1.5rem;
+
+    &:hover {
+      background-color: a.$color-black;
+      border-color: a.$color-light;
+      color: a.$color-light;
+
+      cursor: pointer;
+    }
+  }
+}

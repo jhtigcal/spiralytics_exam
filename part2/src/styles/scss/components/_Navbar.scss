@@ -1,0 +1,35 @@
+nav {
+  padding-left: max(5%, 2.25rem);
+  padding-right: max(5%, 2.25rem);
+  height: max(11.25vh, 5.625rem);
+
+  background-color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .menu-items {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .menu-item {
+      display: flex;
+      align-items: center;
+      margin-left: 2rem;
+
+      img {
+        margin-left: 1rem;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+
+    .menu-icon {
+      height: 1.25rem;
+    }
+  }
+}

@@ -1,0 +1,58 @@
+@use '../abstracts' as a;
+
+#company-section {
+  display: flex;
+  justify-content: center;
+  position: relative;
+
+  &::before {
+    content: 'As Seen On';
+
+    font-family: 'Bebas Neue', sans-serif;
+    text-transform: uppercase;
+    position: absolute;
+
+    padding: 0.25rem 1rem;
+    top: -1rem;
+
+    background: a.$bg-light;
+  }
+
+  .container {
+    // margin-top: 2.5rem;
+    margin-bottom: 6.5rem;
+    border: 1px solid #aaa;
+    width: 100%;
+
+    .companies {
+      padding: 2.5rem;
+      margin: 0 3rem;
+
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+
+      .company {
+        background-color: a.$bg-dark;
+        margin: 0 2rem;
+        width: 10rem;
+        height: 3.75rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+          height: 100%;
+        }
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      .company-2 img {
+        height: 2rem;
+      }
+    }
+  }
+}

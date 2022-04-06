@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Droid Sans');
+
+$header-font: 'Bebas Neue', sans-serif;
+$body-font: 'Droid Sans', sans-serif;
+
+html {
+  font-size: 1.125rem;
+  font-family: $body-font;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button {
+  font-family: $header-font;
+  font-weight: normal;
+  line-height: 1;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
